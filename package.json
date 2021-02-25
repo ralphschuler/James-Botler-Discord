@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "nodemon index.js"
+    "build:docker": "docker build -t james-botler .",
+    "start:docker": "npm run build:docker && docker-compose up -d",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,9 @@
     "axios": "^0.21.1",
     "country-flag-emoji": "^1.0.3",
     "discord.js": "^12.5.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "socks-proxy-agent": "^5.0.0",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
   }
 }

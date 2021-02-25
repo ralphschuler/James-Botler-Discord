@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  app:
+    image: james-botler
+    volumes:
+      - cache:/app/cache
+    depends_on:
+      - tor1
+      - tor2
+      - tor3
+      - tor4
+      - tor5
+    networks:
+      - internal
+  
+  tor1:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=US
+    networks:
+      - internal
+  tor2:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=FI
+    networks:
+      - internal
+  tor3:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=FR
+    networks:
+      - internal
+  tor4:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=HK
+    networks:
+      - internal
+  tor5:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=MX
+    networks:
+      - internal
+
+networks:
+  internal:
+    external: false
+
+volumes:
+  cache:
