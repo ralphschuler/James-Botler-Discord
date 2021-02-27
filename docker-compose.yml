@@ -11,6 +11,10 @@ services:
       - tor3
       - tor4
       - tor5
+      - tor6
+      - tor7
+      - tor8
+      - tor9
     networks:
       - internal
   
@@ -42,6 +46,30 @@ services:
     image: dperson/torproxy
     environment:
       - LOCATION=MX
+    networks:
+      - internal
+  tor6:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=NL
+    networks:
+      - internal
+  tor7:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=RU
+    networks:
+      - internal
+  tor8:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=ES
+    networks:
+      - internal
+  tor9:
+    image: dperson/torproxy
+    environment:
+      - LOCATION=CH
     networks:
       - internal
 
