@@ -1,5 +1,3 @@
-import config from '../config'
+import config from "../config";
 
-export default async function todo_module(message) {
-    
-}
+export default async function todo_module(message) {}

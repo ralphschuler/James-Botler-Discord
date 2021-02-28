@@ -1,17 +1,22 @@
-import Discord from "discord.js"
-import messageEvent from './events/message.event'
-import reactionAddEvent from './events/reactionAdd.event'
-import * as Sentry from "@sentry/node"
-import * as Tracing from "@sentry/tracing"
-import config from './config'
+import Discord from "discord.js";
+import messageEvent from "./events/message.event";
+import reactionAddEvent from "./events/reactionAdd.event";
+import winston from "winston";
+import { SentryTransport } from "winston-node-sentry";
+import config from "./config";
 
-Sentry.init({
-  dsn: config.sentry_dsn,
-  tracesSampleRate: 1.0
-});
-
-process.on('uncaughtException', function(err) {
-  Sentry.captureException(err);
+global.logger = new winston.createLogger({
+  level: "info",
+  format: winston.format.json(),
+  transports: [
+    new winston.transports.Console({ level: "silly" }),
+    new SentryTransport({
+      level: "error",
+      sentryOpts: {
+        dsn: config.sentry_dsn,
+      },
+    }),
+  ],
 });
 
 const client = new Discord.Client({
@@ -19,11 +24,10 @@ const client = new Discord.Client({
 });
 
 client.once("ready", () => {
-  client.on('message', messageEvent)
+  client.on("message", messageEvent);
   client.on("messageReactionAdd", reactionAddEvent);
 
-  console.log("Ready!")
+  logger.info("Ready!");
 });
 
 client.login(config.discord_token);
-
