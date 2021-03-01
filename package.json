@@ -2,17 +2,13 @@
   "name": "james-botler-discord",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:docker": "npm run lint:fix && docker build -t james-botler .",
-    "start:docker": "docker-compose -p james-botler up -d --build",
-    "start:docker-staging": "docker-compose -p james-botler-staging up -d --build ",
-    "lint": "npx eslint ./src",
+    "deploy": "docker build --no-cache . && docker-compose up -d",
+    "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "build": "npx babel src --out-dir dist",
-    "start": "npx babel-node src/main.js",
-    "debug": "npx nodemon --exec npm run start"
+    "build": "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
@@ -43,6 +39,7 @@
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.1",
     "@babel/eslint-parser": "^7.13.8",
+    "@babel/eslint-plugin": "^7.13.0",
     "@babel/node": "^7.13.0",
     "@babel/preset-env": "^7.13.5",
     "eslint": "^7.21.0"

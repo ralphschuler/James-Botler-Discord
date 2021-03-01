@@ -1,4 +1,4 @@
-[
+export default [
   {
     "flag_emoji": "🇦🇨",
     "flag_code": "AC",

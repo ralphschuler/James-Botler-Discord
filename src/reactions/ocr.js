@@ -3,7 +3,7 @@ export default async function _method(client, reaction, user) {
 	if (!reaction.message.attachments.array().length) return;
 
 	const attachments = reaction.message.attachments.array();
-	let textFactory = { head: 'Please Wait...' }
+	let textFactory = { head: 'Please Wait...' };
 	const message = await reaction.message.channel.send(Object.values(textFactory).join('\n'));
 
 	for (let i = 0; i < attachments.length; i++) {

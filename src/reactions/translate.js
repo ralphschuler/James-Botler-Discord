@@ -1,4 +1,4 @@
-import flagMap from '../data/flag_map.json';
+import flagMap from '../data/flag_map';
 import translate from '../modules/translate';
 
 export const emojis = flagMap.map((flag) => flag.flag_emoji);

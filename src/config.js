@@ -1,6 +1,6 @@
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
-dotenv.config()
+dotenv.config();
 
 export default {
 	salt: process.env.SALT,
@@ -21,6 +21,5 @@ export default {
 		'socks5h://tor8:9050',
 		'socks5h://tor9:9050',
 	],
-	use_proxy: false,
 	command_prefix: '!',
 };

@@ -18,9 +18,11 @@ RUN apk add graphicsmagick
 
 FROM install-graphicsmagic as prepare-app
 WORKDIR /app
+
 COPY package*.json /app/
-
 RUN npm install
-COPY . /app
 
-CMD [ "npm", "run", "start" ]
+COPY . /app
+RUN npm run build
+
+CMD [ "node", "dist/main.js" ]

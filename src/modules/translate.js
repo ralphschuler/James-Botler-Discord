@@ -1,20 +1,19 @@
 import db from 'quick.db';
-import tunnelFetch from '../utilities/tunnelFetch'
+import tunnelFetch from '../utilities/tunnelFetch';
 
-const translations_db = db('./translations.db')
+const translations_db = db('./translations.db');
 
 export default async function _method(str, lang) {
 	const hash = sha256(str);
-	let translation = translations_db.get(`${hash}.${lang}`)
+	let translation = translations_db.get(`${hash}.${lang}`);
 
-	if (translation) 
-		return translation
-	
-	translation = translate(str, lang)
-	if (!translation) return
-	translations_db.set(`${hash}.${lang}`, translation)
+	if (translation) {return translation;}
 
-	return translation
+	translation = translate(str, lang);
+	if (!translation) return;
+	translations_db.set(`${hash}.${lang}`, translation);
+
+	return translation;
 }
 
 async function translate(str, lang) {
