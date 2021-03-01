@@ -14,5 +14,5 @@ jobs:
     - name: Auto Tag
       uses: Klemensas/action-autotag@stable
       with:
-        tag_prefix: "releases/v"
+        tag_prefix: "v"
         GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
