@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 
-dotenv.config();
+process.env.NODE_ENV === 'production' ? dotenv.config() : dotenv.config('.env-staging')
 
 export default {
 	salt: process.env.SALT,
