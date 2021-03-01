@@ -4,8 +4,10 @@ services:
   app:
     image: james-botler
     restart: always
+    env_file:
+      - .env
     volumes:
-      - cache:/app/cache
+      - translationsDB:/app/translations.db
     links:
       - tor0
       - tor1
@@ -17,6 +19,13 @@ services:
       - tor7
       - tor8
       - tor9
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30
+    depends_on:
+      - app
   tor0:
     image: dperson/torproxy
     restart: always
@@ -69,4 +78,4 @@ services:
       - LOCATION=CH
 
 volumes:
-  cache:
+  translationsDB:
