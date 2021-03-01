@@ -18,11 +18,11 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner  }}
           password: ${{ secrets.GH_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_NAME }}/jamesbotler:latest,${{ secrets.DOCKERHUB_NAME }}/jamesbotler:${{GITHUB_REF##*/}}
+          tags: ${{ github.repository_owner  }}/jamesbotler:latest,${{ github.repository_owner  }}/jamesbotler:${{GITHUB_REF##*/}}
