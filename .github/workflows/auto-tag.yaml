@@ -5,7 +5,7 @@ on:
       - master
 
 jobs:
-  build:
+  auto-tag:
     runs-on: ubuntu-latest
     steps:
     - name: Check out code 
@@ -15,4 +15,3 @@ jobs:
       uses: Klemensas/action-autotag@stable
       with:
         tag_prefix: "v"
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
