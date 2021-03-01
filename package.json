@@ -5,7 +5,7 @@
   "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "docker build --no-cache . && docker-compose up -d",
+    "deploy": "docker-compose up -d",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "build": "babel src --out-dir dist"

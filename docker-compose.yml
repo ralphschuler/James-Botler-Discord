@@ -2,8 +2,7 @@ version: '3.8'
 
 services:
   app:
-    image: james-botler
-    build: .
+    image: ghcr.io/ralphschuler/james-botler:latest
     restart: always
     env_file:
       - .env
@@ -22,9 +21,8 @@ services:
       - tor9
   watchtower:
     image: containrrr/watchtower
-    environment:
-      - REPO_USER=${DOCKER_USER}
-      - REPO_OASS=${DOCKER_TOKEN}
+    env_file:
+      - .env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --interval 30
