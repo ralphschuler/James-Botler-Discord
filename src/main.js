@@ -6,6 +6,13 @@ import { createLogger, transports, format } from 'winston';
 import { SentryTransport } from 'winston-node-sentry';
 import config from './config';
 
+const sentry = config.sentry_dsn != null ? [new SentryTransport({
+	level: 'error',
+	sentryOpts: {
+		dsn: config.sentry_dsn,
+	},
+})] : []
+
 export default class JamesBotler extends Client {
 	constructor() {
 		super({
@@ -17,12 +24,7 @@ export default class JamesBotler extends Client {
 			format: format.json(),
 			transports: [
 				new transports.Console({ level: 'silly' }),
-				config.sentry_dsn != null ? new SentryTransport({
-					level: 'error',
-					sentryOpts: {
-						dsn: config.sentry_dsn,
-					},
-				}) : null,
+				...sentry,
 			],
 		});
 
