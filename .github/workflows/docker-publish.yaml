@@ -2,7 +2,7 @@ name: Docker Publish
 on:
   push:
     tags:
-      - v*.*.*
+      - v*
 jobs:
   docker-publish:
     name: Lint code base
