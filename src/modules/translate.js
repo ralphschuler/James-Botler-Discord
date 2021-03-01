@@ -1,4 +1,4 @@
-import db from 'quick.db';
+import { db } from 'quick.db';
 import tunnelFetch from '../utilities/tunnelFetch';
 
 const translations_db = db('./translations.db');
