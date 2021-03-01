@@ -25,4 +25,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ github.repository_owner  }}/jamesbotler:latest,${{ github.repository_owner  }}/jamesbotler:${GITHUB_REF#refs/heads/}
+          tags: ${{ github.repository_owner  }}/jamesbotler:latest,${{ github.repository_owner  }}/jamesbotler:${{GITHUB_REF#refs/heads/}}
