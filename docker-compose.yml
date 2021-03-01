@@ -1,13 +1,29 @@
 version: '3.8'
 
 services:
-  app:
-    image: ghcr.io/ralphschuler/jamesbotler:latest
+  production:
+    image: ghcr.io/ralphschuler/jamesbotler:1.0.2
+    restart: always
+    env_file:
+      - .prod.env
+    volumes:
+      - translationsDB:/app/translations.db
+    links:
+      - tor0
+      - tor1
+      - tor2
+      - tor3
+      - tor4
+      - tor5
+      - tor6
+      - tor7
+      - tor8
+      - tor9
+  staging:
+    build: .
     restart: always
     env_file:
       - .env
-    volumes:
-      - translationsDB:/app/translations.db
     links:
       - tor0
       - tor1
