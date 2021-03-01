@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-    image: ghcr.io/ralphschuler/jamesbotler:latest
+    image: ghcr.io/ralphschuler/jamesbotler:1.0.0
     restart: always
     env_file:
       - .env
