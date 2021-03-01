@@ -1,11 +1,11 @@
 {
   "name": "jamesbotler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "docker-compose up -d",
+    "deploy": "docker-compose up -d --build",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "build": "babel src --out-dir dist"
