@@ -2,7 +2,7 @@ name: Docker Publish
 on:
   push:
     tags:
-      - 'releases/v[0-9]+\.[0-9]+\.[0-9]+'
+      - releases/v*
 jobs:
   docker-publish:
     name: Docker Build, Tag & Push
