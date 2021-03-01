@@ -1,5 +1,5 @@
 {
-  "name": "james-botler-discord",
+  "name": "jamesbotler",
   "version": "1.0.0",
   "description": "",
   "main": "dist/main.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ralphschuler/James-Botler-Discord.git"
+    "url": "git+https://github.com/ralphschuler/jamesbotler.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ralphschuler/James-Botler-Discord/issues"
+    "url": "https://github.com/ralphschuler/jamesbotler/issues"
   },
-  "homepage": "https://github.com/ralphschuler/James-Botler-Discord#readme",
+  "homepage": "https://github.com/ralphschuler/jamesbotler#readme",
   "dependencies": {
     "@sentry/node": "^6.2.1",
     "@sentry/tracing": "^6.2.1",
