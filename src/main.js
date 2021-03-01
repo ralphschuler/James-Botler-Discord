@@ -17,12 +17,12 @@ export default class JamesBotler extends Client {
 			format: format.json(),
 			transports: [
 				new transports.Console({ level: 'silly' }),
-				new SentryTransport({
+				config.sentry_dsn != null ? new SentryTransport({
 					level: 'error',
 					sentryOpts: {
 						dsn: config.sentry_dsn,
 					},
-				}),
+				}) : null,
 			],
 		});
 
