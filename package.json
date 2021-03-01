@@ -22,7 +22,7 @@
   "homepage": "https://github.com/ralphschuler/James-Botler-Discord#readme",
   "dependencies": {
     "@sentry/node": "^6.2.0",
-    "@sentry/tracing": "^6.2.0",
+    "@sentry/tracing": "^6.2.1",
     "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
