@@ -1,6 +1,6 @@
 {
   "name": "@ralphschuler/jamesbotler",
-  "version": "1.0.15",
+  "version": "1.0.17",
   "description": "",
   "main": "dist/main.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ralphschuler/jamesbotler#readme",
   "dependencies": {
+    "@babel/runtime": "^7.13.9",
     "@sentry/node": "^6.2.1",
     "@sentry/tracing": "^6.2.1",
     "axios": "^0.21.1",
@@ -41,6 +42,7 @@
     "@babel/eslint-parser": "^7.13.8",
     "@babel/eslint-plugin": "^7.13.0",
     "@babel/node": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.13.9",
     "@babel/preset-env": "^7.13.5",
     "eslint": "^7.21.0"
   }
