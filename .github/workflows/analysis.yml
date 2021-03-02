@@ -14,15 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
 
-      - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@master
+      - name: Run OSSAR
+        uses: github/ossar-action@v1
+        id: ossar
+        
+      - name: Upload results to Security tab
+        uses: github/codeql-action/upload-sarif@v1
         with:
-          output: results.sarif
-          format: sarif
-          gh-code-scanning-compat: true
-          max-allowed-issues: 2147483647
-
-      - name: Upload SARIF results file
-        uses: github/codeql-action/upload-sarif@master
-        with:
-          sarif_file: results.sarif
+          sarif_file: ${{ steps.ossar.outputs.sarifFile }}
