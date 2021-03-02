@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "docker-compose up --remove-orphans -d",
     "lint": "eslint src",
-    "build": "babel src -o dist",
+    "build": "babel src -d dist",
     "lint:fix": "eslint src --fix"
   },
   "repository": {
