@@ -9,6 +9,6 @@ export default function _method(client) {
 		if (paths[i] == 'index.js') continue;
 		client.logger.info(`Initializing event ${paths[i].split('.')[0]}`);
 		const event = require(`./${paths[i]}`);
-		client.on(paths[i].split('.')[0], (...args) => event(client, ...args));
+		client.on(paths[i].split('.')[0], async (...args) => event(client, ...args));
 	}
 }

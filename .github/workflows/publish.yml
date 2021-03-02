@@ -1,10 +1,8 @@
 name: Publish
 on:
   push:
-    branches:
-      - master
-    tags:
-      - v*
+    branches: [master]
+    tags: [v*]
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -46,4 +44,3 @@ jobs:
         with:
           environment: production
           version: ${{ github.ref }}
-          version_prefix: 'v'
