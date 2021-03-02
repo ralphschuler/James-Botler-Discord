@@ -1,5 +1,4 @@
 FROM alpine:latest
-WORKDIR /app
 
 RUN apk update && \
     apk add make gcc g++ autoconf automake \
