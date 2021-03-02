@@ -1,4 +1,4 @@
-export default function _method(str) {
+export default function method(str) {
   str = str.replace(/[\n\r|\n\n]{2,}/g, "\n"); // clear carriage return
   str = str.replace(/\s{2,}/g, " "); // replace multiple spaces by a single one
   str = str.replace(/^\s{2,}|\s{2,}$/, ""); // clear leading and trailing spaces

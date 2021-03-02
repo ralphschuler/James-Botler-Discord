@@ -1,6 +1,6 @@
 import { readdirSync } from "fs";
 
-export default async function _method(client) {
+export default async function method(client) {
   client.logger.info("Initializing commands");
   const paths = readdirSync("./src/commands");
   client.logger.debug(paths);

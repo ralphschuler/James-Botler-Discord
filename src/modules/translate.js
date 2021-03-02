@@ -2,7 +2,7 @@ import tunnelFetch from "../utilities/tunnelFetch";
 
 const translations = [];
 
-export default async function _method(str, lang) {
+export default async function method(str, lang) {
   const hash = sha256(str);
   let translation;
 

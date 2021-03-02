@@ -1,6 +1,6 @@
 import { readdirSync } from "fs";
 
-export default async function _method(client) {
+export default async function method(client) {
   client.logger.info("Initializing events");
   const paths = readdirSync("./src/events");
   client.logger.debug(paths);

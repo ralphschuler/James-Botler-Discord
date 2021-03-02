@@ -1,7 +1,7 @@
 import config from "../config";
 import commandParser from "../utilities/commandParser";
 
-export default async function _method(client, message) {
+export default async function method(client, message) {
   if (message.author.bot || message.author === client.user) return;
 
   if (message.cleanContent.startsWith(config.command_prefix)) {
