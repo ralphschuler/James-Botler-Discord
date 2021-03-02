@@ -1,6 +1,6 @@
 import { readdirSync } from "fs";
 
-export default function _method(client) {
+export default async function _method(client) {
   client.logger.info("Initializing events");
   const paths = readdirSync("./src/events");
   client.logger.debug(paths);
@@ -9,8 +9,6 @@ export default function _method(client) {
     if (paths[i] == "index.js") continue;
     client.logger.info(`Initializing event ${paths[i].split(".")[0]}`);
     const event = require(`./${paths[i]}`);
-    client.on(paths[i].split(".")[0], (...args) => {
-      event(client, ...args);
-    });
+    client.on(paths[i].split(".")[0], (...args) => event(client, ...args));
   }
 }
