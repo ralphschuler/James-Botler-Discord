@@ -1,6 +1,6 @@
 import pagedReply from "../modules/pagedReply";
 
-export function async method(client, message, args) {
+export default async function method(client, message, args) {
   pagedReply([
     [
       "Seite 1 Eintrag 1",
