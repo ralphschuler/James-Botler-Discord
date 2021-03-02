@@ -11,4 +11,4 @@ RUN npm install
 
 COPY . /app
 
-CMD ["npx". "babel-node", "src/main.js" ]
+CMD [ "npx". "babel-node", "src/main.js" ]
