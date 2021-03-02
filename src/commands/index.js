@@ -1,6 +1,6 @@
 import { readdirSync } from "fs";
 
-export default function _method(client) {
+export default async function _method(client) {
   client.logger.info("Initializing commands");
   const paths = readdirSync("./src/commands");
   client.logger.debug(paths);
@@ -9,8 +9,6 @@ export default function _method(client) {
     if (paths[i] == "index.js") continue;
     client.logger.info(`Initializing command ${paths[i].split(".")[0]}`);
     const command = require(`./${paths[i]}`);
-    client.on(`command.${paths[i].split(".")[0]}`, (...args) => {
-      command(client, ...args);
-    });
+    client.on(`command.${paths[i].split(".")[0]}`, (...args) => command(client, ...args));
   }
 }

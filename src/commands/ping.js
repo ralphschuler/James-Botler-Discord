@@ -1,3 +1,3 @@
-export function _method(client, message, args) {
+export function async _method(client, message, args) {
   message.reply("Pong!");
 }
