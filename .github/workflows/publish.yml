@@ -46,4 +46,3 @@ jobs:
         with:
           environment: production
           version: ${{ github.ref }}
-          version_prefix: 'v'
