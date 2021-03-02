@@ -13,7 +13,7 @@ jobs:
     - name: Lint JS
       uses: mrdivyansh/eslint-action@v1.0.7
       with:
-        ghToken: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Lint Docker
       uses: luke142367/Docker-Lint-Action@v1.0.0
