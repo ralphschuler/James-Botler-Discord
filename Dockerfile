@@ -10,5 +10,6 @@ COPY package*.json /app/
 RUN npm install
 
 COPY . /app
+RUN npm run build
 
-CMD [ "npx". "babel-node", "src/main.js" ]
+CMD [ "node", "dist/main.js" ]
