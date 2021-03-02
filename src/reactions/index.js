@@ -11,7 +11,7 @@ export default function _method(client) {
 		const reaction = require(`./${paths[i]}`);
 		client.logger.debug(reaction.emojis);
 		for (const emoji of reaction.emojis) {
-			client.on(`messageReactionAdd.${emoji}`, (...args) => reaction(client, ...args));
+			client.on(`messageReactionAdd.${emoji}`, async (...args) => reaction(client, ...args));
 		}
 	}
 }
