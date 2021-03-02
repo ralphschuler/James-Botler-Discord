@@ -20,7 +20,7 @@ export default async function _method(message, pages, startIndex = 0) {
     switch (reaction.emoji.name) {
       case "◀️":
         if (index > 0) index--;
-        else if (index <= 0) index = pages.length;        
+        else if (index <= 0) index = pages.length;
         break;
 
       case "▶️":
@@ -29,8 +29,8 @@ export default async function _method(message, pages, startIndex = 0) {
         break;
     }
 
-    text = pageToString(pages[index])
-    reply.edit(text)
+    text = pageToString(pages[index]);
+    reply.edit(text);
   });
   collector.on("end", (collected) => reply.delete());
 }

@@ -1,9 +1,8 @@
 FROM alpine:latest as base
 
 RUN apk update && \
-    apk add make gcc g++ autoconf automake \
-    nodejs npm python3 py3-pip tesseract-ocr \
-    graphicsmagick
+    apk add nodejs npm python3 py3-pip \
+    tesseract-ocr graphicsmagick
 
 FROM base
 WORKDIR /usr/src/app
