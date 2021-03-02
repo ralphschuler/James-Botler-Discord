@@ -1,7 +1,5 @@
-import db from 'quick.db'
 import pagedReply from '../modules/pagedReply'
 
-const todos = new db.table('todos')
 export function _method(client, message, args) {
 	pagedReply([
 		[
