@@ -23,7 +23,7 @@ export default class JamesBotler extends Client {
 			level: 'info',
 			format: format.json(),
 			transports: [
-				new transports.Console({ level: 'silly' }),
+				new transports.Console({ level: 'info' }),
 				...sentry,
 			],
 		});
