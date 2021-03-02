@@ -10,15 +10,8 @@ jobs:
     - name: Check out code 
       uses: actions/checkout@v2
 
-    - name: "Build Changelog"
-      id: changelog
-      uses: mikepenz/release-changelog-builder-action@v1.5.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Tag
       uses: Klemensas/action-autotag@stable
       with:
         tag_prefix: "v"
         GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
-        changelog_structure: ${{ steps.changelog.outputs.changelog }}

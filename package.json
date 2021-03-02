@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "docker-compose up --remove-orphans -d --build",
-    "lint": "npx eslint src",
-    "build": "npx babel src -d dist",
-    "lint:fix": "npx eslint src --fix"
+    "lint": "eslint src",
+    "build": "babel src -d dist",
+    "lint:fix": "eslint src --fix"
   },
   "repository": {
     "type": "git",
