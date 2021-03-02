@@ -3,3 +3,15 @@
 [![Quality Analysis](https://github.com/ralphschuler/jamesbotler/actions/workflows/quality-analysis.yml/badge.svg)](https://github.com/ralphschuler/jamesbotler/actions/workflows/quality-analysis.yml)
 
 # JAMESBOTLER
+
+.prod.env
+
+```.env
+
+SALT=<a strong random key>
+TRANSLATION_API=<at the moment this is kept "private">
+DISCORD_TOKEN=<the discord bot token>
+SENTRY_DSN=<sentry dsn for error tracking>
+WITAI_TOKEN_EN=<token for english witai api>
+
+```
