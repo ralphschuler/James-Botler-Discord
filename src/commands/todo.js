@@ -92,6 +92,6 @@ async function del(message, args) {
 
 }
 
-async function del(message, args) {
-	list
+async function show(message, args) {
+	
 }
