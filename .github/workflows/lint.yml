@@ -1,0 +1,25 @@
+name: Lint
+on:
+  push:
+    branches-ignore: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code 
+      uses: actions/checkout@v2
+
+    - name: Lint JS
+      uses: mrdivyansh/eslint-action@v1.0.7
+      with:
+        ghToken: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Lint Docker
+      uses: luke142367/Docker-Lint-Action@v1.0.0
+      with:
+        target: Dockerfile
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

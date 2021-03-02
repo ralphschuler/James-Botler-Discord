@@ -1,2 +1,4 @@
-[![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge&label=build&logo=none)](https://actions-badge.atrox.dev/atrox/ralphschuler/jamesbotler)
+[![Anchore Analysis](https://github.com/ralphschuler/jamesbotler/actions/workflows/anchore-analysis.yml/badge.svg)](https://github.com/ralphschuler/jamesbotler/actions/workflows/anchore-analysis.yml)
+[![Quality Analysis](https://github.com/ralphschuler/jamesbotler/actions/workflows/quality-analysis.yml/badge.svg)](https://github.com/ralphschuler/jamesbotler/actions/workflows/quality-analysis.yml)
+
 # jamesbotler

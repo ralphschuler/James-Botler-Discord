@@ -1,4 +1,4 @@
-name: Auto Tag
+name: Tah
 on:
   push:
     branches:
@@ -11,7 +11,7 @@ jobs:
     - name: Check out code 
       uses: actions/checkout@v2
 
-    - name: Auto Tag
+    - name: Tag
       uses: Klemensas/action-autotag@stable
       with:
         tag_prefix: "v"
