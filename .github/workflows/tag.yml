@@ -10,8 +10,13 @@ jobs:
     - name: Check out code 
       uses: actions/checkout@v2
 
+    - name: Create Changelog
+      id: changelog
+      uses: heineiuo/create-changelogs@master
+
     - name: Tag
       uses: Klemensas/action-autotag@stable
       with:
         tag_prefix: "v"
         GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
+        changelog_structure: ${{ steps.changelog.outputs.changelogs }}
