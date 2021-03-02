@@ -1,4 +1,4 @@
-export default function _method(str) {
+export default function method(str) {
   const args = [];
   let readingPart = false;
   let part = "";

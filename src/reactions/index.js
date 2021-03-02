@@ -1,6 +1,6 @@
 import { readdirSync } from "fs";
 
-export default function _method(client) {
+export default async function method(client) {
   client.logger.info("Initializing reactions");
   const paths = readdirSync("./src/reactions");
   client.logger.debug(paths);

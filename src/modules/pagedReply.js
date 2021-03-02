@@ -1,4 +1,4 @@
-export default async function _method(message, pages, startIndex = 0) {
+export default async function method(message, pages, startIndex = 0) {
   let index = startIndex;
   let text = pageToString(pages[index]);
 
