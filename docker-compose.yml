@@ -7,7 +7,7 @@ services:
     env_file:
       - .prod.env
     volumes:
-      - cache:/usr/src/app/cache
+      - ./cache:/usr/src/app/cache
     links:
       - tor0
       - tor1
@@ -85,6 +85,3 @@ services:
     restart: always
     environment:
       - LOCATION=CH
-
-volumes:
-  cache:
