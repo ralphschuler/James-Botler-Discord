@@ -12,7 +12,7 @@ export default async function run(options) {
       httpsAgent: agent,
       httpAgent: agent,
     })
-  );
+  )
 
   return response;
 }
