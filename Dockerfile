@@ -12,4 +12,4 @@ RUN npm install
 
 COPY . /usr/src/app
 
-CMD ["node", "run", "start"]
+CMD ["npm", "run", "start"]
