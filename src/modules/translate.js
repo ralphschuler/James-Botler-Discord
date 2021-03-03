@@ -12,7 +12,7 @@ export default async function run(str, lang) {
 
   if (!db || !db[lang]) {
     db[lang] = await translate(str, lang);
-    fs.writeFile(dbPath, JSON.stringify(db));
+    fs.writeFile(dbPath, JSON.stringify(db), (error) => {});
   }
 
   return db[lang];
