@@ -13,4 +13,4 @@ RUN npm install
 COPY . /usr/src/app
 RUN npm run build
 
-CMD ["node", "dist/main.js"]
+CMD ["npm", "run", "start"]

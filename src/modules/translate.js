@@ -1,8 +1,10 @@
 import tunnelFetch from "../utilities/tunnelFetch";
+import sha256 from "../utilities/sha256"
+import config from '../config'
 
 const translations = [];
 
-export default async function method(str, lang) {
+export default async function run(str, lang) {
   const hash = sha256(str);
   let translation;
 
@@ -18,7 +20,7 @@ export default async function method(str, lang) {
 
 async function translate(str, lang) {
   const response = await tunnelFetch({
-    method: "POST",
+    run: "POST",
     url: config.translation_api,
     data: { q: str },
     params: {
