@@ -1,3 +1,7 @@
 export async function run(client, message, ...args) {
-  message.reply("Pong!");
+  try {
+    message.reply("Pong!");
+  } catch (error) {
+    client.logger.error(error);
+  }
 }

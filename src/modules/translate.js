@@ -1,21 +1,21 @@
 import tunnelFetch from "../utilities/tunnelFetch";
-import sha256 from "../utilities/sha256"
-import config from '../config'
-
-const translations = [];
+import sha256 from "../utilities/sha256";
+import config from "../config";
+import fs from "fs";
+import path from "path";
 
 export default async function run(str, lang) {
   const hash = sha256(str);
-  let translation;
+  const dbPath = path.join("./", "cache", `${hash}.db`);
+  const db = fs.existsSync(dbPath) ? JSON.parse(fs.readFileSync(dbPath)) : {};
+  if (!db.source) db.source = str;
 
-  if (translation) {
-    return translation;
+  if (!db || !db[lang]) {
+    db[lang] = await translate(str, lang);
+    fs.writeFile(dbPath, JSON.stringify(db), (error) => {});
   }
 
-  translation = translate(str, lang);
-  if (!translation) return;
-
-  return translation;
+  return db[lang];
 }
 
 async function translate(str, lang) {

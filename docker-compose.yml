@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
   production:
-    image: ghcr.io/ralphschuler/jamesbotler:1.1.1
+    image: ghcr.io/ralphschuler/jamesbotler:1.2.0
     restart: always
     env_file:
       - .prod.env
     volumes:
-      - translationsDB:/app/translations.db
+      - cache:/usr/src/app/cache
     links:
       - tor0
       - tor1
@@ -87,4 +87,4 @@ services:
       - LOCATION=CH
 
 volumes:
-  translationsDB:
+  cache:
