@@ -20,7 +20,7 @@ export default async function run(str, lang) {
 
 async function translate(str, lang) {
   const response = await tunnelFetch({
-    run: "POST",
+    method: "POST",
     url: config.translation_api,
     data: { q: str },
     params: {
