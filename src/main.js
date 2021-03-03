@@ -34,8 +34,6 @@ export default class JamesBotler extends Client {
     this.on("warn", (...args) => this.logger.warn(...args));
     this.on("error", (...args) => this.logger.error(...args));
     this.on("debug", (...args) => this.logger.debug(...args));
-    process.on('uncaughtException', (...args) => this.logger.error(...args))
-    process.on('unhandledRejection', (...args) => this.logger.warn(...args))
 
     this.login(config.discord_token);
   }

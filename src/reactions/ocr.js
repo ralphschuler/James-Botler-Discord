@@ -1,4 +1,9 @@
-export const emojis = ["🔍"];
+import Tesseract from 'tesseract.js'
+import gm from 'gm'
+import axios from 'axios'
+import escapeText from '../utilities/escapeText'
+
+export const emojis = ["🔍", "🔎"];
 export async function run(client, reaction, user) {
   if (!reaction.message.attachments.array().length) return;
 
@@ -35,7 +40,7 @@ export async function run(client, reaction, user) {
           })
             .then(async function ({ data }) {
               textFactory = { head: data.text };
-              await message.edit(Object.values(textFactory).join("\n"));
+              await message.edit(escapeText(Object.values(textFactory).join("\n")));
             })
             .catch((error) => {
               client.logger.error(error);

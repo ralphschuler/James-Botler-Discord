@@ -1,7 +1,7 @@
 import pagedReply from "../modules/pagedReply";
 
 export async function run(client, message, ...args) {
-  pagedReply([
+  pagedReply(message, [
     [
       "Seite 1 Eintrag 1",
       "Seite 1 Eintrag 2",
