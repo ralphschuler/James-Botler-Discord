@@ -5,7 +5,7 @@ const wit_en = new Wit({
   accessToken: config.witai_token_en,
 });
 
-export default async function method(message) {
+export default async function run(message) {
   try {
     wit_en
       .message(message.content)

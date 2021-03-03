@@ -1,19 +1,18 @@
+"use strict";
 import { Client } from "discord.js";
 import initializeEvents from "./events";
 import initializeCommands from "./commands";
 import initializeReactions from "./reactions";
 import { createLogger, transports, format } from "winston";
-import { SentryTransport } from "winston-node-sentry";
+import Sentry from 'winston-sentry'
 import config from "./config";
 
 const sentry =
   config.sentry_dsn != null
     ? [
-        new SentryTransport({
+        new Sentry({
           level: "error",
-          sentryOpts: {
-            dsn: config.sentry_dsn,
-          },
+          dsn: config.sentry_dsn
         }),
       ]
     : [];

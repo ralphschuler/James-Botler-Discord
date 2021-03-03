@@ -1,5 +1,5 @@
 export const emojis = ["🔍"];
-export default async function method(client, reaction, user) {
+export async function run(client, reaction, user) {
   if (!reaction.message.attachments.array().length) return;
 
   const attachments = reaction.message.attachments.array();
