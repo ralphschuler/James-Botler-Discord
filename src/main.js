@@ -6,6 +6,7 @@ import initializeReactions from "./reactions";
 import { createLogger, transports, format } from "winston";
 import Sentry from "winston-sentry";
 import config from "./config";
+import package_json from "../package.json"
 
 const sentry =
   config.sentry_dsn != null
@@ -43,7 +44,7 @@ export default class JamesBotler extends Client {
     initializeCommands(this);
     initializeReactions(this);
 
-    this.logger.info({ status: "Ready!" });
+    this.logger.info({ status: "Ready!", version: package_json.version });
   }
 }
 
