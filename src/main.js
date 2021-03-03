@@ -4,7 +4,7 @@ import initializeEvents from "./events";
 import initializeCommands from "./commands";
 import initializeReactions from "./reactions";
 import { createLogger, transports, format } from "winston";
-import Sentry from 'winston-sentry'
+import Sentry from "winston-sentry";
 import config from "./config";
 
 const sentry =
@@ -12,7 +12,7 @@ const sentry =
     ? [
         new Sentry({
           level: "error",
-          dsn: config.sentry_dsn
+          dsn: config.sentry_dsn,
         }),
       ]
     : [];
