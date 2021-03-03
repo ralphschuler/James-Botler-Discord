@@ -4,7 +4,7 @@
 
 ## James Botler
 
-Goal of this project is to create a discord bot free to host for everyone.
+Goal of this project is to create a discord bot free personal discord bot.
 
 ### Environment Variables
 
