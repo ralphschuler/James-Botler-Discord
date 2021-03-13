@@ -9,14 +9,14 @@ export async function run(client, reaction, user) {
     const flag = flagMap.find(
       (flag) => flag.flag_emoji === reaction.emoji.name
     );
-    const reply = await reaction.message.channel.send("Please wait ...");
+    const reply = await reaction.message.inlineReply("Please wait ...");
     await reply.edit(await translate("Please wait ...", flag.lang_code));
-    translate(reaction.message.cleanContent, flag.lang_code).then(
+    translate(escapeText(reaction.message.cleanContent), flag.lang_code).then(
       (translation) => {
         reply.edit(`**${escapeText(translation)}**`);
       }
     );
   } catch (error) {
-    client.logger.error(error);
+    client.logger.error({error});
   }
 }

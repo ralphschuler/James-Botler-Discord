@@ -7,6 +7,8 @@ export default {
   discord_token: process.env.DISCORD_TOKEN,
   sentry_dsn: process.env.SENTRY_DSN,
   witai_token_en: process.env.WITAI_TOKEN_EN,
+  witai_token_de: process.env.WITAI_TOKEN_DE,
+  witai_token_zh: process.env.WITAI_TOKEN_ZH,
   use_proxy: true,
   proxies: [
     "socks5h://tor0:9050",

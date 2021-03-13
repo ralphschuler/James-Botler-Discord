@@ -1,4 +1,5 @@
 "use strict";
+import './extensions/Message'
 import { Client } from "discord.js";
 import initializeEvents from "./events";
 import initializeCommands from "./commands";
