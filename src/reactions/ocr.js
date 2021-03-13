@@ -25,9 +25,9 @@ export async function run(client, reaction, user) {
         gm(Buffer.from(img.data, "utf-8")).toBuffer(
           "JPG",
           function (error, buffer) {
-            if (error) return client.logger.error(error);
+            if (error) return client.logger.error({error});
             Tesseract.recognize(buffer, "eng", {
-              cachePath: "./cache",
+              cachePath: "./cache/tesseract",
               logger: async function (m) {
                 if (Math.floor(m.progress * 10) % 10 != 0) return;
                 client.logger.info(m);
@@ -46,13 +46,13 @@ export async function run(client, reaction, user) {
                 );
               })
               .catch((error) => {
-                client.logger.error(error);
+                client.logger.error({error});
               });
           }
         );
       }
     }
   } catch (error) {
-    client.logger.error(error);
+    client.logger.error({error});
   }
 }

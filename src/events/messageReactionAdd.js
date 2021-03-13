@@ -5,6 +5,6 @@ export async function run(client, reaction, user) {
 
     client.emit(`messageReactionAdd.${reaction.emoji}`, reaction, user);
   } catch (error) {
-    client.logger.error(error);
+    client.logger.error({error});
   }
 }

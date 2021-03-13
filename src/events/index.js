@@ -15,6 +15,6 @@ export default async function run(client) {
       });
     }
   } catch (error) {
-    client.logger.error(error);
+    client.logger.error({error});
   }
 }

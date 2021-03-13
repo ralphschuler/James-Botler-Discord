@@ -10,8 +10,8 @@ export default async function run(message, pages, startIndex = 0) {
   };
 
   const reply = await message.channel.send(text);
-  await reply.react("◀️");
-  await reply.react("▶️");
+  reply.react("◀️");
+  reply.react("▶️");
 
   const collector = reply.createReactionCollector(filter, { time: 15000 });
   collector.on("collect", (reaction, user) => {
@@ -20,19 +20,21 @@ export default async function run(message, pages, startIndex = 0) {
     switch (reaction.emoji.name) {
       case "◀️":
         if (index > 0) index--;
-        else if (index <= 0) index = pages.length;
+        else if (index <= 0) index = pages.length-1;
         break;
 
       case "▶️":
-        if (index < pages.length) index++;
-        else if (index >= pages.length) index = pages.length;
+        if (index < pages.length-1) index++;
+        else if (index >= pages.length-1) index = pages.length-1;
         break;
     }
-
+    collector.resetTimer()
+    reaction.remove()
     text = pageToString(pages[index]);
     reply.edit(text);
   });
   collector.on("end", (collected) => reply.delete());
+  message.delete()
 }
 
 function pageToString(page) {

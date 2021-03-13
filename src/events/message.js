@@ -8,9 +8,10 @@ export async function run(client, message) {
     if (message.cleanContent.startsWith(config.command_prefix)) {
       const args = commandParser(message.cleanContent);
       const command = args.shift().slice(config.command_prefix.length);
-      client.emit(`command.${command}`, message, ...args);
-    }
+      client.emit(`command.${command}`, message, args);
+    } 
   } catch (error) {
-    client.logger.error(error);
+    console.log(error)
+    client.logger.error({error});
   }
 }

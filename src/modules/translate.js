@@ -6,7 +6,7 @@ import path from "path";
 
 export default async function run(str, lang) {
   const hash = sha256(str);
-  const dbPath = path.join("./", "cache", `${hash}.db`);
+  const dbPath = path.join("./", "cache", 'translations', `${hash}.db`);
   const db = fs.existsSync(dbPath) ? JSON.parse(fs.readFileSync(dbPath)) : {};
   if (!db.source) db.source = str;
 
